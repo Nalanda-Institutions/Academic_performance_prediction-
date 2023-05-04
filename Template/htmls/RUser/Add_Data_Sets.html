@@ -1,0 +1,104 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#FFFFFF;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;}
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			input,textarea{
+			font-family:Aldrich;
+			font-size:15px;
+			}
+.style5 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form action="{% url 'Add_Data_Sets' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}<span class="style5">Browse Student Data Set</span>
+              <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+
+
+        <hr><fieldset><form role="form" method="POST" >
+                    <table border="5" bordercolor="#FF00FF">
+                      <tr><td bgcolor="#FF0000"><span class="style8">Regno</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Name</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Gender</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Age</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Height</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Weight</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Physical_Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Cardio_Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Aerobic_Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Stress</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Mental_Health</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Intelligent</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Executive_fun</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Eating</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Pyhsical_Activity</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Sleep_Pattern</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Social_Tie</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Time_Management</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Stu_Class</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Attendance</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Library_Entry</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Online_learning</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Semester</span></td>
+
+                      </tr>
+
+
+        {% for row in excel_data %}
+<tr>
+            {% for cell in row %}
+                     <td>   {{ cell }}&nbsp;&nbsp&nbsp;&nbsp;
+            {% endfor %}
+
+            <br></td></tr>
+        {% endfor %}
+                  </table>
+  </div>
+            </div> </fieldset></form>
+
+
+
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

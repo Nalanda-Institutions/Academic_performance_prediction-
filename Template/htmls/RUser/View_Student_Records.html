@@ -1,0 +1,117 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+        .style5 {color: #FFFF00}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">VIEW ALL STUDENTS ACADMIC DETAILS  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                                <table border="5" bordercolor="#FF00FF">
+                      <tr><td bgcolor="#FF0000"><span class="style8">Regno</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Name</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Gender</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">Age</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Height</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Weight</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Physical Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Cardio Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Aerobic Fitness</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Stress</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Mental Health</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Intelligent</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Executive Fun</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Eating</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Pyhsical Activity</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Sleep Pattern</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Social Tie</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Time Management</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Student Class</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Library Entry</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Online learning</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Attendance</span></td>
+                        </tr>
+                        {% for i in list_objects %}
+                        <tr>
+                            <td style="color:black" ><div align="center">{{i.Regno}}</div></td>
+                            <td style="color:black" ><div align="center">{{i.names}}</div></td>
+                            <td style="color:black" ><div align="center">{{i.Gender}}</div></td>
+						    <td style="color:black" ><div align="center">{{i.Age}}</div></td>
+						    <td style="color:black" ><div align="center">{{i.Height}}</div></td>
+                            <td style="color:red"><div align="center">{{i.Weight}}</div></td>
+						    <td style="color:red"><div align="center">{{i.Physical_Fit}}</div></td>
+							<td style="color:red"><div align="center">{{i.cardio_Fit}}</div></td>
+							<td style="color:red"><div align="center">{{i.Aerobic_Fit}}</div></td>
+							<td style="color:red"><div align="center">{{i.Stress}}</div></td>
+							<td style="color:red"><div align="center">{{i.Mental_Health}}</div></td>
+							<td style="color:red"><div align="center">{{i.Intelligent}}</div></td>
+							<td style="color:red"><div align="center">{{i.Executive_fun}}</div></td>
+							<td style="color:red"><div align="center">{{i.Eating}}</div></td>
+							<td style="color:red"><div align="center">{{i.Pyhsical_Activity}}</div></td>
+							<td style="color:red"><div align="center">{{i.Sleep_pattern}}</div></td>
+							<td style="color:red"><div align="center">{{i.Social_Tie}}</div></td>
+							<td style="color:red"><div align="center">{{i.Time_Management}}</div></td>
+							<td style="color:red"><div align="center">{{i.Stu_Class}}</div></td>
+							<td style="color:red"><div align="center">{{i.Library_Entry}}</div></td>
+							<td style="color:red"><div align="center">{{i.Online_learning}}</div></td>
+							<td style="color:red"><div align="center">{{i.Attendance}}%</div></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
